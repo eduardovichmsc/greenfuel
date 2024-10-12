@@ -34,7 +34,7 @@ export const Nav = () => {
 								"text-neutral-300": hoveredLink && hoveredLink !== link.href,
 							}
 						)}
-						onMouseEnter={() => setHoveredLink(link.href)}
+						onMouseEnter={() => setHoveredLink(link.href ? link.href : "")}
 						onMouseLeave={() => setHoveredLink("")}>
 						{link.title}
 					</Link>
