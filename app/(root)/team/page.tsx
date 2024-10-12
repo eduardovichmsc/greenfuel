@@ -22,21 +22,45 @@ export default function TeamPage() {
 				<div className="flex flex-col justify-between bg-white w-1/2 h-full p-6 rounded-3xl order-1">
 					<Nav />
 					<div className="space-y-8">
-						<span className="text-6xl relative">Бізбен байланыс</span>
-						<p className="text-xl leading-tight text-left">
+						<motion.span
+							initial="initial"
+							whileInView="to"
+							variants={variants}
+							transition={{ delay: 1.25, duration: 0.75 }}
+							viewport={{ once: true }}
+							className="text-6xl relative">
+							Бізбен байланыс
+						</motion.span>
+						<motion.p
+							initial="initial"
+							whileInView="to"
+							variants={variants}
+							transition={{ delay: 1.5, duration: 0.75 }}
+							viewport={{ once: true }}
+							className="text-xl leading-tight text-left">
 							Бізбен байланысу сіздің пікіріңіз бен ұсыныстарыңыз үшін өте
 							<br />
 							маңызды. Сіз біздің қызметтеріміз, бастамаларымыз немесе <br />
 							экологиялық мәселелер туралы сұрақтарыңыз болса, <br /> бізбен
 							хабарласыңыз.
-						</p>
+						</motion.p>
 						<div className="flex h-14">
-							<button className="border-2 rounded-full h-full px-8 text-xl duration-300 text-neutral-600 hover:text-black hover:border-black">
+							<motion.button
+								initial={{ opacity: 0 }}
+								whileInView={{ opacity: 1 }}
+								transition={{ delay: 2, duration: 0.75 }}
+								viewport={{ once: true }}
+								className="border-2 rounded-full h-full px-8 text-xl duration-300 text-neutral-600 hover:text-black hover:border-black">
 								Байланысыңыз
-							</button>
-							<button className="border-2 rounded-full flex justify-center items-center size-14 duration-300 text-neutral-600 hover:text-black hover:border-black">
+							</motion.button>
+							<motion.button
+								initial={{ opacity: 0 }}
+								whileInView={{ opacity: 1 }}
+								transition={{ delay: 2, duration: 0.75 }}
+								viewport={{ once: true }}
+								className="border-2 rounded-full flex justify-center items-center size-14 duration-300 text-neutral-600 hover:text-black hover:border-black">
 								<MoveUpRightIcon />
-							</button>
+							</motion.button>
 						</div>
 					</div>
 				</div>
