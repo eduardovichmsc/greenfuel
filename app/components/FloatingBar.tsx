@@ -25,14 +25,17 @@ export const FloatingBar = () => {
 		console.log(pathname);
 	}, [pathname]);
 
+	console.log(scrollProgress);
+
 	return (
 		<motion.div
 			className="fixed flex justify-center w-full z-50 mt-6"
 			initial={{ opacity: 0, y: -10 }}
 			animate={{
-				opacity: scrollProgress < 0.3645 ? 0 : 1,
-				y: scrollProgress < 0.3645 ? -10 : 0,
-				pointerEvents: scrollProgress < 0.3645 ? "none" : "auto",
+				opacity: scrollProgress < 0.3645 || scrollProgress == 1 ? 0 : 1,
+				y: scrollProgress < 0.3645 || scrollProgress == 1 ? -10 : 0,
+				pointerEvents:
+					scrollProgress < 0.3645 || scrollProgress == 1 ? "none" : "auto",
 			}}
 			transition={{ duration: 0.3, ease: "easeOut" }}>
 			<div

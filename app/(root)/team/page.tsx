@@ -31,10 +31,10 @@ export default function TeamPage() {
 							хабарласыңыз.
 						</p>
 						<div className="flex h-14">
-							<button className="border-2 rounded-full h-full px-8 text-xl">
+							<button className="border-2 rounded-full h-full px-8 text-xl duration-300 text-neutral-600 hover:text-black hover:border-black">
 								Байланысыңыз
 							</button>
-							<button className="border-2 rounded-full flex justify-center items-center size-14">
+							<button className="border-2 rounded-full flex justify-center items-center size-14 duration-300 text-neutral-600 hover:text-black hover:border-black">
 								<MoveUpRightIcon />
 							</button>
 						</div>

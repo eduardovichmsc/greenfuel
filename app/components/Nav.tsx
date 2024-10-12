@@ -18,9 +18,11 @@ export const Nav = () => {
 		<nav className="flex justify-between items-center">
 			<div className="flex items-center space-x-2">
 				<div className="size-9 bg-green-500 rounded-full"></div>
-				<p className="font-semibold uppercase tracking-wide text-2xl">
+				<Link
+					href={"/"}
+					className="font-semibold uppercase tracking-wide text-2xl">
 					GreenFuel
-				</p>
+				</Link>
 			</div>
 
 			<div className="flex space-x-6">

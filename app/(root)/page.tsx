@@ -52,10 +52,10 @@ export default function Home() {
 							қажеттіліктері.
 						</p>
 						<div className="flex h-14">
-							<button className="border-2 rounded-full h-full px-8 text-xl">
+							<button className="border-2 rounded-full h-full px-8 text-xl transition-all duration-300 text-neutral-600 hover:border-black hover:text-black">
 								Байланысыңыз
 							</button>
-							<button className="border-2 rounded-full flex justify-center items-center size-14">
+							<button className="border-2 rounded-full flex justify-center items-center size-14 duration-300 text-neutral-600 hover:border-black hover:text-black">
 								<MoveUpRightIcon />
 							</button>
 						</div>
@@ -83,10 +83,10 @@ export default function Home() {
 							бұл ақылға қонымды адамның қажеттілігі.
 						</p>
 						<div className="flex h-14">
-							<button className="border-2 rounded-full h-full px-8 text-lg bg-white text-black">
+							<button className="border-2 rounded-full h-full px-8 text-lg bg-white duration-300 text-neutral-600 hover:text-black hover:border-black">
 								Байланысыңыз
 							</button>
-							<button className="border-2 rounded-full flex justify-center items-center size-12 bg-white text-black">
+							<button className="border-2 rounded-full flex justify-center items-center size-12 bg-white duration-300 text-neutral-600 hover:text-black hover:border-black">
 								<MoveUpRightIcon />
 							</button>
 						</div>
@@ -114,7 +114,7 @@ export default function Home() {
 								балкондағы құмыраға ағаш отырғыза аласыз.
 							</p>
 						</div>
-						<button className="border-2 rounded-full w-full py-3 text-lg bg-white text-black">
+						<button className="border-2 rounded-full w-full py-3 text-lg bg-white duration-300 text-neutral-600 hover:text-black hover:border-black">
 							Бізге қосылыңыз
 						</button>
 					</div>
@@ -146,9 +146,12 @@ export default function Home() {
 						{mindetter.map((mindet) => (
 							<p
 								key={mindet.title}
-								className={clsx("w-full p-6 px-10 transition-all", {
-									"bg-green-600 text-white": choosenMindet === mindet.id,
-								})}
+								className={clsx(
+									"flex items-center w-full h-full px-10 transition-all",
+									{
+										"bg-green-600 text-white": choosenMindet === mindet.id,
+									}
+								)}
 								onMouseEnter={() => {
 									if (mindet.body) {
 										handleMindet(mindet.body, mindet.id);
@@ -163,13 +166,13 @@ export default function Home() {
 				<div className="flex h-[50vh] gap-8 *:transition-all">
 					{News.map((news) => (
 						<motion.div
-							initial="initial"
-							whileInView="to"
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ delay: 0.5, duration: 0.75 }}
 							viewport={{ once: true }}
 							key={news.title}
 							className={clsx(
-								"w-[33.3%] hover:flex-grow h-full duration-1000 bg-white rounded-3xl p-6 space-y-4 overflow-hidden border-2 border-transparent hover:border-green-6000"
+								"w-[33.3%] hover:flex-grow h-full duration-1000 bg-white rounded-3xl p-6 space-y-4 overflow-hidden border-2 border-transparent hover:border-green-600"
 							)}>
 							{/* <div className="rounded-3xl w-full h-[60%] bg-black/5"></div> */}
 							<p className="font-medium text-3xl">{news.title}</p>

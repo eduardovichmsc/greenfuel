@@ -66,7 +66,7 @@ export const Footer = () => {
 									<div className="space-y-2 text-lg font-normal">
 										{link.sub?.map((sub) => (
 											<Link
-												className="flex"
+												className="flex w-max hover:underline underline-offset-8"
 												href={link.href ? link.href : "/"}
 												key={sub.href}>
 												{sub.title}
