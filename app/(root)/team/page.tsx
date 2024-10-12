@@ -1,28 +1,34 @@
+"use client";
 import Image from "next/image";
 
 import { Nav } from "@/app/components/Nav";
 import { MoveUpRightIcon } from "lucide-react";
+import { motion } from "framer-motion";
+import { variants } from "@/app/(root)/page";
 
 export default function TeamPage() {
 	return (
 		<div className="space-y-8">
-			<div className="flex gap-6 w-full h-[90vh]">
+			<motion.div
+				variants={variants}
+				initial="initial"
+				whileInView="to"
+				transition={{ delay: 0.5, duration: 0.75 }}
+				viewport={{ once: true }}
+				className="flex gap-6 w-full h-[94.5vh]">
 				<div className="bg-white w-1/2 h-full rounded-3xl relative order-2">
 					<Image src="/header.jpg" fill alt="" className="rounded-3xl" />
 				</div>
 				<div className="flex flex-col justify-between bg-white w-1/2 h-full p-6 rounded-3xl order-1">
 					<Nav />
 					<div className="space-y-8">
-						<span className="text-6xl relative">
-							Табиғатқа қамқорлық
-							<br /> Қоғамды біріктіру
-						</span>
-						<p className="text-xl leading-tight text-left ">
-							Біздің әлемімізді және балаларымыздың өмірін қауіпсіз ету,
-							<br /> біз өмір сүретін жерлердің экологиясы туралы сенімді
-							ақпарат алу
-							<br /> артық талаптар емес, бұлар ақылға қонымды адамның кәдімгі
-							қажеттіліктері.
+						<span className="text-6xl relative">Бізбен байланыс</span>
+						<p className="text-xl leading-tight text-left">
+							Бізбен байланысу сіздің пікіріңіз бен ұсыныстарыңыз үшін өте
+							<br />
+							маңызды. Сіз біздің қызметтеріміз, бастамаларымыз немесе <br />
+							экологиялық мәселелер туралы сұрақтарыңыз болса, <br /> бізбен
+							хабарласыңыз.
 						</p>
 						<div className="flex h-14">
 							<button className="border-2 rounded-full h-full px-8 text-xl">
@@ -34,19 +40,31 @@ export default function TeamPage() {
 						</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 
 			<div className=""></div>
 
 			{/* используй в /contacts */}
-			<div className="w-full h-[70vh] bg-white relative overflow-hidden rounded-3xl">
+			<motion.div
+				variants={variants}
+				initial="initial"
+				whileInView="to"
+				transition={{ delay: 0.5, duration: 0.75 }}
+				viewport={{ once: true }}
+				className="w-full h-[70vh] bg-white relative overflow-hidden rounded-3xl">
 				<Image src="/mainland.jpg" fill alt="" />
 				<div className="relative bg-[#f2f2f2] w-fit p-6 rounded-3xl rounded-bl-none rounded-tr-none">
 					<p className="text-4xl">Әлемді Бірге Жақсартайық!</p>
 				</div>
-			</div>
+			</motion.div>
 
-			<div className="w-full h-[80vh] bg-black/90 rounded-3xl text-white flex justify-center items-center p-6">
+			<motion.div
+				variants={variants}
+				initial="initial"
+				whileInView="to"
+				transition={{ delay: 0.5, duration: 0.75 }}
+				viewport={{ once: true }}
+				className="w-full h-[80vh] bg-black/90 rounded-3xl text-white flex justify-center items-center p-6">
 				<form className="space-y-6 w-fit">
 					<p className="text-3xl text-center">
 						Командамыздың бір <br /> бөлігі болыңыз!
@@ -67,7 +85,7 @@ export default function TeamPage() {
 						</button>
 					</div>
 				</form>
-			</div>
+			</motion.div>
 		</div>
 	);
 }

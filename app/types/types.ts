@@ -12,3 +12,9 @@ export interface LinkType {
 export interface FooterLinkType extends LinkType {
 	sub?: LinkType[];
 }
+
+export interface NewsType {
+	id: number;
+	title: string;
+	body: string;
+}

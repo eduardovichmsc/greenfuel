@@ -5,7 +5,19 @@ import { useState } from "react";
 import clsx from "clsx";
 
 import { Nav } from "@/app/components/Nav";
-import { mindetter } from "@/app/store/static";
+import { mindetter, News } from "@/app/store/static";
+import { motion } from "framer-motion";
+
+export const variants = {
+	initial: {
+		opacity: 0,
+		y: 20,
+	},
+	to: {
+		opacity: 1,
+		y: 0,
+	},
+};
 
 export default function Home() {
 	const [choosenMindet, setChoosenMindet] = useState<number | undefined>(0);
@@ -18,10 +30,23 @@ export default function Home() {
 
 	return (
 		<div className="space-y-8">
-			<div className="flex gap-6 w-full h-[90vh]">
+			<motion.div
+				initial="initial"
+				whileInView="to"
+				transition={{ delay: 0.5, duration: 0.75 }}
+				variants={variants}
+				viewport={{ once: true }}
+				className="flex gap-6 w-full h-[95.9vh]">
 				<div className="bg-white w-1/2 h-full rounded-3xl relative order-2">
-					<Image src="/header.jpg" fill alt="" className="rounded-3xl" />
+					<video
+						src="/header.mp4"
+						className="rounded-3xl object-cover w-full h-full"
+						autoPlay
+						loop
+						muted
+					/>
 				</div>
+
 				<div className="flex flex-col justify-between bg-white w-1/2 h-full p-6 rounded-3xl order-1">
 					<Nav />
 					<div className="space-y-8">
@@ -46,11 +71,17 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 
 			<section className="space-y-8">
 				{/* sections -- start */}
-				<div className="relative w-full bg-white rounded-3xl rounded-bl-none flex flex-col justify-center p-6 h-[90vh]">
+				<motion.div
+					initial="initial"
+					whileInView="to"
+					transition={{ delay: 0.5, duration: 0.75 }}
+					viewport={{ once: true }}
+					variants={variants}
+					className="relative w-full bg-white rounded-3xl rounded-bl-none flex flex-col justify-center p-6 h-[90vh]">
 					<p className="uppercase leading-tight font-normal text-[58px]">
 						Экологиялық таза өнімдерді жеуге, таза ауамен тыныстауға, біздің
 						әлемімізді және балаларымыздың <br /> өмірін қауіпсіз етуге деген
@@ -70,9 +101,15 @@ export default function Home() {
 							</button>
 						</div>
 					</div>
-				</div>
+				</motion.div>
 
-				<div className="flex h-[50vh] gap-8">
+				<motion.div
+					initial="initial"
+					whileInView="to"
+					transition={{ delay: 0.5, duration: 0.75 }}
+					viewport={{ once: true }}
+					variants={variants}
+					className="flex h-[50vh] gap-8">
 					{/* first */}
 					<div className="bg-white rounded-3xl border-2 border-green-600 flex flex-col justify-between w-1/4 h-full p-6">
 						<div className="space-y-6">
@@ -127,26 +164,26 @@ export default function Home() {
 							</p>
 						))}
 					</div>
-				</div>
+				</motion.div>
 
-				<div className="flex h-[60vh] gap-8">
-					<div className="w-3/5 h-full bg-white rounded-3xl p-6 space-y-4">
-						<div className="rounded-3xl w-full h-[70%] bg-black/5"></div>
-						<p className="font-medium text-3xl">Green Counter</p>
-						<p className="text-xl">
-							Have reliable information about the ecology of the places where we
-							live are not overstated requirements, these are the normal needs
-							of a reasonable person.
-						</p>
-					</div>
-					<div className="w-2/5 h-full bg-white rounded-3xl p-6 space-y-4">
-						<div className="rounded-3xl w-full h-[70%] bg-black/5"></div>
-						<p className="font-medium text-3xl">Green Career</p>
-						<p className="text-xl">
-							A worldwide flash mob of good environmental deeds for everyone who
-							loves nature and shares &quot;green&quot; values.
-						</p>
-					</div>
+				<div className="flex h-[50vh] gap-8 *:transition-all">
+					{News.map((news) => (
+						<motion.div
+							initial="initial"
+							whileInView="to"
+							transition={{ delay: 0.5, duration: 0.75 }}
+							viewport={{ once: true }}
+							key={news.title}
+							className={clsx(
+								"w-[33.3%] hover:flex-grow h-full duration-1000 bg-white rounded-3xl p-6 space-y-4 overflow-hidden border-2 border-transparent hover:border-green-6000"
+							)}>
+							{/* <div className="rounded-3xl w-full h-[60%] bg-black/5"></div> */}
+							<p className="font-medium text-3xl">{news.title}</p>
+							<p className="text-lg tracking-tight line-clamp-[12]">
+								{news.body}
+							</p>
+						</motion.div>
+					))}
 				</div>
 
 				{/* sections -- end */}

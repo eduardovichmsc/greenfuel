@@ -77,7 +77,7 @@ export const Footer = () => {
 							))}
 						</div>
 						<div className="w-1/3 flex justify-end space-x-2">
-							<div className="size-10 bg-green-500"></div>
+							<div className="size-9 bg-green-500 rounded-full"></div>
 							<p className="font-semibold uppercase tracking-wide text-2xl">
 								GreenFuel
 							</p>

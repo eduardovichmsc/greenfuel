@@ -29,7 +29,7 @@ export const Nav = () => {
 						key={link.href}
 						href={link.href ? link.href : "/error"}
 						className={clsx(
-							"font-semibold text-lg duration-150 transition-all ease-in-out",
+							"font-normal text-lg duration-150 transition-all ease-in-out",
 							{
 								"text-neutral-300": hoveredLink && hoveredLink !== link.href,
 							}

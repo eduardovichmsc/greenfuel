@@ -47,7 +47,7 @@ export const FloatingBar = () => {
 						key={link.href}
 						href={link.href ? link.href : "/error"}
 						className={clsx(
-							"font-normal text-lg duration-150 transition-all ease-in-out p-2",
+							"font-normal text-md duration-150 transition-all ease-in-out p-2",
 							{
 								"text-neutral-300": hoveredLink && hoveredLink !== link.href,
 							}
