@@ -147,9 +147,13 @@ export default function Home() {
 							<p
 								key={mindet.title}
 								className={clsx("w-full p-6 px-10 transition-all", {
-									"bg-green-600 text-white": choosenMindet == mindet.id,
+									"bg-green-600 text-white": choosenMindet === mindet.id,
 								})}
-								onMouseEnter={() => handleMindet(mindet.body, mindet.id)}>
+								onMouseEnter={() => {
+									if (mindet.body) {
+										handleMindet(mindet.body, mindet.id);
+									}
+								}}>
 								{mindet.title}
 							</p>
 						))}
