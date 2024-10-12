@@ -13,7 +13,7 @@ export default function Home() {
 	const [choosenMindet, setChoosenMindet] = useState<number | undefined>(0);
 	const [mindet, setMindet] = useState<string>("");
 
-	const handleMindet = (value, id) => {
+	const handleMindet = (value: string, id: number) => {
 		setMindet(value);
 		setChoosenMindet(id);
 	};
