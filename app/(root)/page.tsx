@@ -1,23 +1,13 @@
 "use client";
+import { Nav } from "@/app/components/Nav";
+import { variants } from "@/app/animated";
+import { mindetter, News } from "@/app/store/static";
+
 import { MoveUpRightIcon } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import clsx from "clsx";
-
-import { Nav } from "@/app/components/Nav";
-import { mindetter, News } from "@/app/store/static";
 import { motion } from "framer-motion";
-
-export const variants = {
-	initial: {
-		opacity: 0,
-		y: 20,
-	},
-	to: {
-		opacity: 1,
-		y: 0,
-	},
-};
 
 export default function Home() {
 	const [choosenMindet, setChoosenMindet] = useState<number | undefined>(0);

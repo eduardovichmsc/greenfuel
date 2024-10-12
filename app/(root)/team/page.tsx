@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Nav } from "@/app/components/Nav";
 import { MoveUpRightIcon } from "lucide-react";
 import { motion } from "framer-motion";
-import { variants } from "@/app/(root)/page";
+import { variants } from "@/app/animated";
 
 export default function TeamPage() {
 	return (
