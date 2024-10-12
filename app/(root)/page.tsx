@@ -21,13 +21,19 @@ export default function Home() {
 	return (
 		<div className="space-y-8">
 			<motion.div
-				initial="initial"
-				whileInView="to"
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
 				transition={{ delay: 0.5, duration: 0.75 }}
 				variants={variants}
 				viewport={{ once: true }}
 				className="flex gap-6 w-full h-[95.9vh]">
-				<div className="bg-white w-1/2 h-full rounded-3xl relative order-2">
+				<motion.div
+					initial="initial"
+					whileInView="to"
+					transition={{ delay: 1, duration: 0.75 }}
+					variants={variants}
+					viewport={{ once: true }}
+					className="bg-white w-1/2 h-full rounded-3xl relative order-2">
 					<video
 						src="/header.mp4"
 						className="rounded-3xl object-cover w-full h-full"
@@ -35,7 +41,7 @@ export default function Home() {
 						loop
 						muted
 					/>
-				</div>
+				</motion.div>
 
 				<div className="flex flex-col justify-between bg-white w-1/2 h-full p-6 rounded-3xl order-1">
 					<Nav />
